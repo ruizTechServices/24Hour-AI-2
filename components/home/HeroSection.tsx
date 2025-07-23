@@ -1,9 +1,47 @@
+'use client'
+import { useEffect, useState } from "react"
+import { supabase } from "@/lib/supabase/client"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Sparkles } from "lucide-react"
+import Link from "next/link"
 
 export function HeroSection() {
+  const [user, setUser] = useState<null | { id: string }>(null)
+
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data: { user } }) => setUser(user))
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null)
+    })
+    return () => subscription.unsubscribe()
+  }, [])
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+        {/* Auth Buttons */}
+        {/* Auth / Dashboard Buttons */}
+        {!user ? (
+          <div className="absolute top-8 right-8 flex gap-4 z-20">
+            <Link href="/login">
+              <Button variant="ghost" size="sm" className="backdrop-blur-sm bg-white/10 hover:bg-white/20 text-slate-200">
+                Log&nbsp;In
+              </Button>
+            </Link>
+            <Link href="/signup">
+              <Button size="sm" className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white">
+                Sign&nbsp;Up
+              </Button>
+            </Link>
+          </div>
+        ) : (
+          <div className="absolute top-8 right-8 z-20">
+            <Link href="/dashboard">
+              <Button size="sm" className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white">
+                Dashboard
+              </Button>
+            </Link>
+          </div>
+        )}
+
       {/* Animated Background Elements */}
       <div className="absolute inset-0 -z-20">
         <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-gradient-to-r from-indigo-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
@@ -52,18 +90,18 @@ export function HeroSection() {
                 className="group relative px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border-0"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  Get Started Free
+                  Start&nbsp;Free
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/20 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
               
               <Button 
-                variant="outline" 
-                size="lg"
+                variant="outline"
+                size="lg" asChild
                 className="px-8 py-4 bg-white/[0.05] backdrop-blur-sm border border-white/[0.1] text-slate-200 hover:bg-white/[0.08] hover:text-white font-semibold rounded-full transition-all duration-300"
               >
-                Try Demo
+                <Link href="/login">Try&nbsp;Demo</Link>
               </Button>
             </div>
 
