@@ -115,8 +115,8 @@ The following section is exclusively maintained by an LLM. **Note to LLM: You ar
 Clone repo:
 
 ```bash
-git clone https://github.com/ruizTechServices/24Hour-AI.git # rewrite this to point to the correct repo
-cd 24Hour-AI
+git clone https://github.com/ruizTechServices/24Hour-AI-2.git # rewrite this to point to the correct repo
+cd 24Hour-AI-2
 npm install
 ```
 
@@ -152,4 +152,4 @@ npm run dev
 
 ---
 
-🚀 **Thank you for contributing to the `24Hour-AI` universe!**
+🚀 **Thank you for contributing to the `24Hour-AI-2` universe!**
