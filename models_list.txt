@@ -1,0 +1,98 @@
+# Models List
+
+## OpenAI Models
+
+Below is an up-to-date list (July 2025) of all publicly accessible OpenAI models that can be called through the REST API. Models are grouped by capability and include the canonical model name you pass as the `model` parameter.
+
+### 1. Chat / Text-Completion
+| Model | Context Window | Notes |
+|-------|----------------|-------|
+| `gpt-4o-preview` | 128K | Latest flagship model – multi-modal (vision, audio-in/out), fastest & cheapest 4-series model |
+| `gpt-4o` | 128K | Production version of **4o** family |
+| `gpt-4o-mini` | 64K | Scaled-down 4o for lower latency / cost |
+| `gpt-4-turbo` | 128K | GPT-4 Turbo (text-only) |
+| `gpt-4-turbo-128k` | 128K | Explicit 128-token window SKU |
+| `gpt-4` | 8K | Original GPT-4 model |
+| `gpt-4-0613` / `gpt-4-32k-0613` | 8K / 32K | Legacy June 2023 snapshot (still callable) |
+| `gpt-3.5-turbo` | 16K | Most cost-effective general model |
+| `gpt-3.5-turbo-0125` | 16K | Jan 2025 snapshot |
+| `gpt-3.5-turbo-1106` | 16K | Nov 2023 snapshot (fine-tuning base) |
+| `text-davinci-003` | 4K | Instruct GPT-3 series (legacy) |
+| `text-curie-001`, `text-babbage-001`, `text-ada-001` | 2K-4K | Legacy GPT-3 base tiers |
+| `code-davinci-002` | 8K | Legacy code generation model |
+
+> **Fine-tuned models** will appear with names like `ft:gpt-3.5-turbo-1106:your-org:custom-suffix`. They are callable the same way as the base model.
+
+### 1 a. Reasoning / Deliberation Models (o-series)
+
+OpenAI’s `o-series` models run an additional deliberation pass that improves step-by-step reasoning at the cost of latency. They’re exposed through the **Responses API** and, in some cases, the Chat Completions API.
+
+| Model | Context Window | Availability | Notes |
+|-------|----------------|--------------|-------|
+| `o1` | 32K | All tiers | Baseline deliberate model |
+| `o1-preview` / `o1-mini` | 32K / 16K | All tiers | Faster, lower-cost variants |
+| `o1-pro` | 64K | All tiers | Higher accuracy within o1 family |
+| `o3` | 128K | Tiers 4-5 or verified org | Flagship deliberate model; excels at multi-step tool use |
+| `o3-pro` | 128K | Tiers 4-5 | Enhanced accuracy, higher cost |
+| `o4-mini` | 128K | All tiers (verified org) | Supports Reinforcement Fine-Tuning (RFT) |
+| `GPT-4.1` | 128K | ChatGPT / limited beta API | Specialized GPT-4 checkpoint focused on coding & reasoning |
+
+**Notes**
+- `o3` and `o4-mini` were announced in Dec 2024 (see [OpenAI blog](https://openai.com/index/introducing-o3-and-o4-mini/)).
+- Access depends on your organization’s usage tier. See the [Help Center article](https://help.openai.com/en/articles/10362446-api-access-to-o1-o3-and-o4-models) for details.
+- These models are *additive* to GPT-4 o; choose them when you need extra deliberation or RFT support.
+
+---
+
+### 2. Embeddings
+| Model | Dim | Notes |
+|-------|-----|-------|
+| `text-embedding-3-large` | 3,072 | Highest quality embeddings |
+| `text-embedding-3-small` | 1,536 | 5× cheaper, strong quality |
+| `text-embedding-ada-002` | 1,536 | Previous generation; still available for backward-compat |
+
+### 3. Audio
+| Model | Type | Notes |
+|-------|------|-------|
+| `tts-1` | Text → Speech | High-quality multi-voice TTS |
+| `tts-1-hd` | Text → Speech | Higher fidelity / slower |
+| `whisper-1` | Speech → Text | Automatic speech recognition |
+
+### 4. Images
+| Model | Capability | Notes |
+|-------|-----------|-------|
+| `dall-e-3` | Text → Image | Latest DALL·E generation |
+| `dall-e-2` | Text → Image | Prior generation |
+
+### 5. Moderation & Safety
+| Model | Notes |
+|-------|-------|
+| `text-moderation-latest` | Current recommended moderation model |
+| `text-moderation-stable` | Pinned version for consistent results |
+
+---
+**Usage Tip:** Pass the desired model name in the OpenAI API `model` parameter. Always consult the [Model Lifecycle documentation](https://platform.openai.com/docs/deprecations) for future deprecation dates.
+
+
+
+
+
+
+
+
+
+
+I want to allow certain models in certain tiers.s:
+For the platinum tier, This would be a tier that allows 
+the user to access all models for $100 a month. 
+I need to implement basic token limits daily. If users would
+want to use the models more, they can add their own api
+key from the respective model providers. 
+
+All the models are allowed here in the platinum tier.
+
+
+For the gold tier, I want to allow the user to access 
+the models for $50 a month. I need to implement basic token
+limits daily. If users would want to use the models more, 
+they can add their own api key from the respective model providers. 

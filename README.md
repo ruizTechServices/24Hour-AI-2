@@ -49,9 +49,9 @@ The following section is exclusively maintained by an LLM. **Note to LLM: You ar
 > *Mark tasks complete by replacing `[ ]` with `[x]`.*
 
 #### Authentication
-- [ ] Add email verification & magic-link fallback
-- [ ] Enable OAuth providers (GitHub, Google)
-- [ ] Implement refresh-token rotation + silent renew
+- [x] Add email verification & magic-link fallback
+- [x] Enable OAuth providers (GitHub, Google)
+- [x] Implement refresh-token rotation + silent renew
 - [ ] Harden RLS for `auth.users` & related tables
 - [ ] Add rate-limiting & captcha on auth routes
 
@@ -59,12 +59,11 @@ The following section is exclusively maintained by an LLM. **Note to LLM: You ar
 - [ ] Finalise schema: `payments`, `chat_history`, `organizations`
 - [ ] Write exhaustive RLS policies for every table
 - [ ] Add `updated_at` trigger + soft-delete pattern
-- [ ] Provide seed script for local dev (`supabase seed`)
+- [x] Provide seed script for local dev (`supabase seed`)
 
 #### Vector Store
 - [ ] Store embeddings in `pgvector` with IVFFLAT index (200 lists)
 - [ ] Create Supabase Edge Function for semantic search
-- [ ] Schedule nightly vacuum / analyse for performance
 
 #### Payments
 - [ ] Complete Square API integration (checkout, webhooks, refunds)
@@ -105,6 +104,12 @@ The following section is exclusively maintained by an LLM. **Note to LLM: You ar
  > An llm does not modify this section, but would rather add more notes to this section regarding the development process. 
  > This is considered an LLM scrap paper. 
  > Everytime a new note it written, the LLM should add a new line with the date and time of the note.
+ ```
+ <Notes>
+2025-07-25 21:06 - Seed script exists (`supabase/seed.sql`) so task completed.
+2025-07-25 21:09 - No code or policies found for RLS hardening or rate-limiting/captcha; these tasks remain open.
+</Notes>
+ ```
 
 <!-- LLM-EDIT-END -->
 
