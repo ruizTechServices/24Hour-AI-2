@@ -52,7 +52,7 @@ The following section is exclusively maintained by an LLM. **Note to LLM: You ar
 - [x] Add email verification & magic-link fallback
 - [x] Enable OAuth providers (GitHub, Google)
 - [x] Implement refresh-token rotation + silent renew
-- [ ] Harden RLS for `auth.users` & related tables
+- [x] Harden RLS for `auth.users` & related tables
 - [ ] Add rate-limiting & captcha on auth routes
 
 #### Database
