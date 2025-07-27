@@ -25,13 +25,15 @@ export default function Home() {
       {/* Main Content */}
       <main className="relative z-10">
         <HeroSection /> {/*The Hero Section is complet and should not be modified.  */}
-        <ValueProposition />
-        <UseCases />
-        <Testimonials />
-        <FinalCTA />
+        <ValueProposition /> {/*The Value Proposition is complet and should not be modified.  */}
+        <UseCases /> {/*The Use Cases is complet and should not be modified.  */}
+        <Testimonials /> {/*The Testimonials is complet and should not be modified.  */}
+        <FinalCTA /> {/*The Final CTA is complet and should not be modified.  */}
       </main>
 
       <Footer />
     </div>
   )
 }
+
+//todo: add a pricing section to detail pricing and usage costs, etc. 

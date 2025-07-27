@@ -1,7 +1,9 @@
-import { SquareClient, SquareEnvironment, SquareError } from "square";
+const { Client, Environment } = require('square');
 require('dotenv').config()
 
-export const client = new SquareClient({
-  token: process.env.SQUARE_ACCESS_TOKEN,
-  environment: SquareEnvironment.Sandbox,
+const client = new Client({
+  accessToken: process.env.SQUARE_ACCESS_TOKEN,
+  environment: Environment.Sandbox,
 });
+
+export { client };
