@@ -24,12 +24,16 @@ export class AIService {
   private circuitBreakers: Map<string, CircuitBreakerState> = new Map();
   private readonly CIRCUIT_BREAKER_THRESHOLD = 5;
   private readonly CIRCUIT_BREAKER_TIMEOUT = 60000; // 1 minute
+  private initialized = false;
 
   constructor() {
-    this.initializeProviders();
+    // Lazy initialization - don't initialize providers at build time
   }
 
   private initializeProviders() {
+    if (this.initialized) return;
+    this.initialized = true;
+    
     const providers = [
       new OpenAIProvider(),
       new AnthropicProvider(),
@@ -52,6 +56,9 @@ export class AIService {
    * Main chat method with intelligent provider selection and fallback
    */
   async chat(request: ChatRequest): Promise<ChatResponse> {
+    // Ensure providers are initialized
+    this.initializeProviders();
+    
     // Check user subscription and rate limits
     await this.checkUserAccess(request.userId, request.organizationId);
 
@@ -81,6 +88,9 @@ export class AIService {
    * Get all available models across providers
    */
   getAvailableModels(): Record<string, string[]> {
+    // Ensure providers are initialized
+    this.initializeProviders();
+    
     const models: Record<string, string[]> = {};
     
     for (const [name, provider] of this.providers) {
@@ -96,6 +106,9 @@ export class AIService {
    * Get provider health status
    */
   async getProviderStatus(): Promise<Record<string, boolean>> {
+    // Ensure providers are initialized
+    this.initializeProviders();
+    
     const status: Record<string, boolean> = {};
     
     for (const [name, provider] of this.providers) {
