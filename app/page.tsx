@@ -4,7 +4,8 @@ import { UseCases } from "@/components/home/UseCases"
 import { Testimonials } from "@/components/home/Testimonials"
 import { FinalCTA } from "@/components/home/FinalCTA"
 import { Footer } from "@/components/home/Footer"
-
+import { Features } from "@/components/home/Features"
+  
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
@@ -28,6 +29,7 @@ export default function Home() {
         <ValueProposition /> {/*The Value Proposition is complet and should not be modified.  */}
         <UseCases /> {/*The Use Cases is complet and should not be modified.  */}
         <Testimonials /> {/*The Testimonials is complet and should not be modified.  */}
+        <Features /> {/*The Features is complet and should not be modified.  */}
         <FinalCTA /> {/*The Final CTA is complet and should not be modified.  */}
       </main>
 
