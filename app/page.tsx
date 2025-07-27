@@ -24,7 +24,7 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="relative z-10">
-        <HeroSection />
+        <HeroSection /> {/*The Hero Section is complet and should not be modified.  */}
         <ValueProposition />
         <UseCases />
         <Testimonials />
