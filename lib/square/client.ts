@@ -1,9 +1,23 @@
 const { Client, Environment } = require('square');
 require('dotenv').config()
 
-const client = new Client({
-  accessToken: process.env.SQUARE_ACCESS_TOKEN,
-  environment: Environment.Sandbox,
-});
+// Lazy-initialized Square client to avoid build-time errors
+let _client: any = null;
 
-export { client };
+function getClient() {
+  if (!_client) {
+    _client = new Client({
+      accessToken: process.env.SQUARE_ACCESS_TOKEN,
+      environment: Environment.Sandbox,
+    });
+  }
+  return _client;
+}
+
+// Export a proxy that initializes the client on first access
+export const client = new Proxy({}, {
+  get(target, prop, receiver) {
+    const actualClient = getClient();
+    return Reflect.get(actualClient, prop, receiver);
+  }
+});
