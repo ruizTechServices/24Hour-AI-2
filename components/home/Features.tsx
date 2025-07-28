@@ -99,7 +99,7 @@ export function Features() {
       <div className="max-w-7xl mx-auto">
         {/* header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          <h2 className="heading text-3xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-white via-slate-200 to-slate-300 bg-clip-text text-transparent">
               Everything&nbsp;You&nbsp;Get with&nbsp;
             </span>
@@ -107,7 +107,7 @@ export function Features() {
               24Hour-AI
             </span>
           </h2>
-          <p className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto">
+          <p className="body-text text-lg md:text-xl text-slate-400 max-w-3xl mx-auto">
             One platform, all the power you need—priced for humans, built for scale.
           </p>
         </div>
@@ -133,13 +133,13 @@ export function Features() {
                   <span className="mr-4 inline-flex size-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur border border-white/10 group-hover:scale-110 transition-transform">
                     <Icon className="size-7 text-indigo-400 group-hover:text-indigo-300 transition-colors" />
                   </span>
-                  <h3 className="text-xl md:text-2xl font-semibold text-white group-hover:text-indigo-100 transition-colors">
+                  <h3 className="heading text-xl md:text-2xl font-semibold text-white group-hover:text-indigo-100 transition-colors">
                     {title}
                   </h3>
                 </div>
 
                 {/* bullet list */}
-                <ul className="space-y-3">
+                <ul className="body-text space-y-3">
                   {bullets.map((b, j) => (
                     <li key={j} className="text-slate-300 group-hover:text-slate-200 leading-relaxed pl-4 relative">
                       <span className="absolute -left-1 top-2 size-1.5 rounded-full bg-indigo-400/70" />

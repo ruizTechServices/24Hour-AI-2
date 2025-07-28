@@ -256,24 +256,20 @@ export function HeroSection() {
             </div>
 
             {/* Main Heading (H1) */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-tight">
-              <span className="bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
-                24Hour
-              </span>
-              <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-violet-400 bg-clip-text text-transparent">
-                -AI
-              </span>
+            <h1 className="heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 leading-tight">
+              24Hour-<span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">AI</span>
             </h1>
 
             {/* Subtitle (H2) */}
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-slate-300 font-light leading-relaxed">
+            <h2 className="body-text text-xl sm:text-2xl md:text-3xl lg:text-4xl text-slate-300 font-light leading-relaxed">
               Transform Your Productivity with AI That Never Sleeps
             </h2>
 
             {/* Description */}
-            <p className="text-base md:text-lg lg:text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Unlock premium AI capabilities at affordable prices. Write better code, boost productivity,
-              and accelerate learning with our 24/7 AI assistant designed for professionals who demand excellence.
+            <p className="body-text text-lg text-slate-400 mb-10 max-w-2xl leading-relaxed">
+              Access 5 leading AI providers through one unified platform. 
+              Start at just <span className="text-green-400 font-bold">$1/day</span> with intelligent model routing, 
+              enterprise security, and 24/7 availability.
             </p>
 
             {/* CTA Buttons */}

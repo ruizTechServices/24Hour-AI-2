@@ -113,7 +113,7 @@ export function ValueProposition() {
           <div className="relative z-10">
             {/* Headline */}
             <header className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-extrabold leading-tight">
+              <h2 className="heading text-3xl md:text-5xl font-extrabold leading-tight">
                 <span className="bg-gradient-to-r from-white via-slate-200 to-slate-300 bg-clip-text text-transparent">
                   Unlock&nbsp;AI&nbsp;Superpowers—
                 </span>
@@ -121,7 +121,7 @@ export function ValueProposition() {
                   Just&nbsp;$1 for&nbsp;24 Hours
                 </span>
               </h2>
-              <p className="mt-6 text-lg md:text-xl text-slate-400 max-w-3xl mx-auto">
+              <p className="body-text mt-6 text-lg md:text-xl text-slate-400 max-w-3xl mx-auto">
                 Instant, on-demand access to top language models—no subscriptions, no surprises.
               </p>
             </header>
@@ -145,11 +145,11 @@ export function ValueProposition() {
                       </span>
                     </div>
                     {/* Title */}
-                    <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-indigo-100 transition-colors">
+                    <h3 className="heading text-xl font-semibold text-white mb-4 group-hover:text-indigo-100 transition-colors">
                       {title}
                     </h3>
                     {/* Bullet list */}
-                    <ul className="space-y-2 text-slate-400 group-hover:text-slate-300 leading-relaxed">
+                    <ul className="body-text space-y-2 text-slate-400 group-hover:text-slate-300 leading-relaxed">
                       {bullets.map((b, j) => (
                         <li key={j} className="relative pl-5">
                           <span className="absolute left-0 top-1/2 -translate-y-1/2 size-1.5 rounded-full bg-indigo-400/70" />
@@ -175,8 +175,8 @@ export function ValueProposition() {
                     <Icon className="size-5 text-indigo-300" />
                   </span>
                   <div>
-                    <h4 className="text-lg font-semibold text-white mb-1">{title}</h4>
-                    <p className="text-slate-400 leading-relaxed">{desc}</p>
+                    <h4 className="heading text-lg font-semibold text-white mb-1">{title}</h4>
+                    <p className="body-text text-slate-400 leading-relaxed">{desc}</p>
                   </div>
                 </div>
               ))}

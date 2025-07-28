@@ -118,5 +118,21 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-open-sans), sans-serif;
   }
 }
+
+/* Font utility classes */
+.heading {
+  font-family: var(--font-audiowide), sans-serif;
+}
+
+.body-text {
+  font-family: var(--font-open-sans), sans-serif;
+}
+
+/* Apply Audiowide to all headings by default */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-audiowide), sans-serif;
+}
+
