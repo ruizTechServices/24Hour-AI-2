@@ -15,7 +15,7 @@ function getClient() {
 }
 
 // Export a proxy that initializes the client on first access
-export const client = new Proxy({}, {
+export const client = new Proxy({} as any, {
   get(target, prop, receiver) {
     const actualClient = getClient();
     return Reflect.get(actualClient, prop, receiver);
