@@ -117,7 +117,7 @@ export function HeroSection() {
                     className="w-full h-full"
                   />
                 </div>
-                <span className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                <span className="text-lg font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
                   24Hour-AI
                 </span>
               </div>
@@ -256,7 +256,7 @@ export function HeroSection() {
             </div>
 
             {/* Main Heading (H1) */}
-            <h1 className="heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 leading-tight">
+            <h1 className="heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
               24Hour-<span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">AI</span>
             </h1>
 
